@@ -1,0 +1,35 @@
+.tests {
+  color: var(--link-color);
+  margin: 50px auto 0;
+  position: relative;
+}
+
+.tests__title {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.tests__table {
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 20px 0 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tests__row {
+  border-bottom: 1px solid var(--border-color);
+  border-collapse: collapse;
+  color: var(--link-color);
+}
+
+.tests__cell {
+  padding: 10px 0;
+}
+
+.tests__cell:last-of-type {
+  text-align: end;
+}
