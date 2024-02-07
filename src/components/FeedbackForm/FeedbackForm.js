@@ -4,6 +4,7 @@ import FeedbackFormCheckboxes from "../FeedbackFormCheckboxes/FeedbackFormCheckb
 import { pathogens } from "../utils/constants";
 import "./FeedbackForm.css";
 import Preloader from "../Preloader/Preloader";
+import PopupRequest from "../PopupRequest/PopupRequest";
 import * as sendData from "../SendData/SendData";
 import { NavLink } from "react-router-dom";
 
@@ -19,6 +20,8 @@ function FeedbackForm() {
   const [isErrorTextForTel, setIsErrorTextForTel] = useState("");
   const [isErrorTextForEmail, setIsErrorTextForEmail] = useState("");
   const [isPreloader, setIsPreloader] = useState(false);
+  const [isPopupRequest, setIsPopupRequest] = useState(false);
+  const [isTitleFromPopupReq, setIsTitleFromPopupReq] = useState("");
 
   const [formValue, setFormValue] = useState({
     company: "",
@@ -30,6 +33,10 @@ function FeedbackForm() {
   });
 
   const [selectedPathogen, setSelectedPathogen] = useState({});
+
+  function handlePopupHide() {
+    setIsPopupRequest(false);
+  }
 
   function sendForm({ formValue, selectedPathogen }) {
     const { company, userName, tel, email, sample, comment } = formValue;
@@ -45,10 +52,14 @@ function FeedbackForm() {
       )
       .then((res) => {
         setIsPreloader(false);
+        setIsTitleFromPopupReq(res.message);
+        setIsPopupRequest(true);
         return res;
       })
       .catch((err) => {
+        setIsTitleFromPopupReq(err.message);
         setIsPreloader(false);
+        setIsPopupRequest(true);
       });
   }
 
@@ -163,6 +174,14 @@ function FeedbackForm() {
   return (
     <div className="feedback">
       {isPreloader ? <Preloader /> : ""}
+      {isPopupRequest ? (
+        <PopupRequest
+          handleClick={handlePopupHide}
+          title={isTitleFromPopupReq}
+        />
+      ) : (
+        ""
+      )}
       <h3 className="feedback__title">Оставьте заявку и мы свяжемся с вами</h3>
       <form
         className="feedback__form"

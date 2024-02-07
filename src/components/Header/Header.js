@@ -23,6 +23,26 @@ function Header({ scrollToTop, isFixedMenu }) {
         <nav className="header__nav">
           <ul className="header__list">
             <li className="header__item">
+              <Link
+                to={{
+                  pathname: "/#services",
+                }}
+                className="header__link link"
+              >
+                Услуги
+              </Link>
+            </li>
+            <li className="header__item">
+              <Link
+                to={{
+                  pathname: "/#purchase",
+                }}
+                className="header__link link"
+              >
+                Тест-системы
+              </Link>
+            </li>
+            <li className="header__item">
               <NavLink to="/aboutUs" className="header__link link">
                 О нас
               </NavLink>
