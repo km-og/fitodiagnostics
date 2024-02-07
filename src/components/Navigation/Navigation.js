@@ -19,6 +19,7 @@ function Navigation({ handleClick }) {
                   pathname: "/#services",
                 }}
                 className="navigation__link link"
+                onClick={handleClick}
               >
                 Услуги
               </Link>
@@ -29,6 +30,7 @@ function Navigation({ handleClick }) {
                   pathname: "/#purchase",
                 }}
                 className="navigation__link link"
+                onClick={handleClick}
               >
                 Тест-системы
               </Link>
