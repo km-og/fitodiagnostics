@@ -27,12 +27,7 @@ function Footer() {
             </a>
           </li>
           <li className="footer__item">
-            <a
-              href="mailto:grigory.tchepurnov@yandex.ru"
-              target="_blank"
-              rel="noreferrer"
-              className="footer__link "
-            >
+            <a href="mailto:fitodiagnostika@mail.ru" className="footer__link ">
               <img src={mail} alt="mail" className="footer__icon" />
             </a>
           </li>

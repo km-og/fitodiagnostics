@@ -28,9 +28,7 @@ function Purchase() {
           Российской Федерации. Чтобы приобрести интересующую Вас тест-систему,
           свяжитесь с менеджером компании по электронной почте{" "}
           <a
-            href="mailto:grigory.tchepurnov@yandex.ru"
-            target="_blank"
-            rel="noreferrer"
+            href="mailto:fitodiagnostika@mail.ru"
             className="purchase__link link"
           >
             fitodiagnostika@mail.ru.
